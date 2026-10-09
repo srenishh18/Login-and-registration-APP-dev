@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  color: #202922;
+  background: #f4f3ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #202922;
+  --muted: #777f77;
+  --line: #dcded5;
+  --green: #285a45;
+  --green-dark: #1f4938;
+  --paper: #f4f3ed;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(380px, 0.95fr) minmax(480px, 1.05fr);
+  min-height: 100vh;
+  padding: 18px;
+  gap: 18px;
+}
+
+.visual-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 36px);
+  overflow: hidden;
+  padding: 38px 42px 30px;
+  color: #fff;
+  background-color: #455d50;
+  background-image: linear-gradient(180deg, rgba(19, 34, 29, 0.2) 0%, rgba(19, 34, 29, 0.08) 38%, rgba(19, 34, 29, 0.72) 100%), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85');
+  background-position: center;
+  background-size: cover;
+}
+
+.visual-topline, .mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 20px;
+}
+
+.brand-name {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.visual-copy { margin: auto 0 28px; }
+.visual-kicker, .form-eyebrow, .visual-caption {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.visual-kicker { color: #e2cba0; }
+.visual-copy h1 {
+  margin: 17px 0 13px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(42px, 5vw, 67px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+.visual-copy p { margin: 0; color: rgba(255, 255, 255, 0.83); font-size: 15px; }
+.visual-caption { color: rgba(255, 255, 255, 0.75); }
+
+.form-panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 36px);
+  padding: 58px 48px 70px;
+  background: #fffefa;
+}
+
+.form-wrap { width: min(100%, 410px); }
+.mobile-brand { display: none; }
+.form-eyebrow { margin: 0 0 13px; color: var(--green); }
+.form-wrap h2 {
+  margin: 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 39px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+.form-intro { margin: 9px 0 28px; color: var(--muted); font-size: 15px; }
+
+.mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  margin-bottom: 27px;
+  border: 1px solid #e6e7e0;
+  background: #f4f4ef;
+}
+.mode-tab {
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: #737b73;
+  font-size: 13px;
+  font-weight: 600;
+}
+.mode-tab.active {
+  background: #fffefa;
+  color: var(--ink);
+  box-shadow: 0 1px 4px rgba(32, 41, 34, 0.11);
+}
+
+.auth-form { display: flex; flex-direction: column; }
+.auth-form label { margin: 0 0 8px; font-size: 13px; font-weight: 600; }
+.auth-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  margin-bottom: 20px;
+  border: 1px solid #d9ddd5;
+  border-radius: 2px;
+  outline: none;
+  background: #fffefa;
+  color: var(--ink);
+  font-size: 14px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.auth-form input::placeholder { color: #a2a79f; }
+.auth-form input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(40, 90, 69, 0.12); }
+.label-row { display: flex; justify-content: space-between; }
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 50px;
+  padding: 0 17px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--green);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 150ms ease, transform 150ms ease;
+}
+.submit-button:hover { background: var(--green-dark); }
+.submit-button:active { transform: translateY(1px); }
+.submit-button span { font-size: 18px; }
+
+.switch-prompt { margin: 21px 0 0; color: var(--muted); text-align: center; font-size: 13px; }
+.switch-prompt button, .form-footnote a {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+.switch-prompt button:hover, .form-footnote a:hover { text-decoration: underline; }
+.form-footnote { margin: 29px 0 0; color: #858b83; text-align: center; font-size: 11px; line-height: 1.7; }
+.notice-message, .error-message, .success-message { margin: -5px 0 18px; font-size: 13px; line-height: 1.5; }
+.notice-message, .success-message { color: var(--green); }
+.error-message { color: #a53831; }
+.page-index {
+  position: absolute;
+  right: 26px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #858b83;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.page-index span { width: 30px; height: 1px; background: #c7cbc2; }
+
+button:focus-visible, a:focus-visible { outline: 3px solid #bb8b4b; outline-offset: 3px; }
+
+@media (max-width: 860px) {
+  .auth-layout { grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr); }
+  .visual-panel { padding: 30px 27px 25px; }
+  .form-panel { padding-right: 34px; padding-left: 34px; }
+}
+
+@media (max-width: 680px) {
+  .auth-layout { display: block; padding: 0; }
+  .visual-panel { display: none; }
+  .form-panel { min-height: 100vh; padding: 35px 24px 70px; }
+  .form-wrap { max-width: 420px; }
+  .mobile-brand { display: flex; margin-bottom: 42px; color: var(--green); }
+  .form-wrap h2 { font-size: 36px; }
+  .page-index { right: 24px; bottom: 18px; }
+}
+
+@media (max-width: 380px) {
+  .form-panel { padding-right: 18px; padding-left: 18px; }
+  .form-wrap h2 { font-size: 32px; }
+}
